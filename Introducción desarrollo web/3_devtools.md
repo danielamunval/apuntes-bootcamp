@@ -33,16 +33,14 @@ Muestra el contenido del almacenamiento local del navegador: cookies, localStora
 #### ✅ Captura los siguientes elementos:
 
 - **Una solicitud HTTP**:
-![Solicitud HTTP](C:\Users\danie\Desktop\BOOTCAMP FULL STACK JAVA\APUNTES PARA GITHUB\Introducción desarrollo web\img-act3\Solicitud-http.PNG)
-
+![Solicitud-http](https://github.com/user-attachments/assets/e9a814c2-acbb-47ff-874e-c325c74b785f)
 
 - **Un error en consola** (si aparece):
-![Error consola](C:\Users\danie\Desktop\BOOTCAMP FULL STACK JAVA\APUNTES PARA GITHUB\Introducción desarrollo web\img-act3\error-consola.PNG)
+![error-consola](https://github.com/user-attachments/assets/4e442a34-26af-4ee1-b2cb-35c008b12d63)
 
 
 - **El HTML de un elemento**:
-![HTML de un Elemento](C:\Users\danie\Desktop\BOOTCAMP FULL STACK JAVA\APUNTES PARA GITHUB\Introducción desarrollo web\img-act3\HTML-elemento.PNG)
-
+![HTML-elemento](https://github.com/user-attachments/assets/6e83ab34-d1e8-434b-ac41-ade31e43c6c6)
 
 
 
