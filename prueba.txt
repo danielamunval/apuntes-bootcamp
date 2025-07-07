@@ -1,3 +1,8 @@
-Hola, Soy Dani y esta es una prueba para subir a GitHub
-estoy probando agregar otra linea de texto
+Hola, Soy Dani y esta es una prueba para subir a GitHub, es mi primer commit
+estoy probando agregar otra linea de texto desde consola GitBash
+------
+
 Hola, soy Dani, hoy es 14-06-2025 y estoy probando subir y agregar una nueva linea de texto, para posteriormente actualizar cambios en el repositorio de prueba.
+------
+
+Hola! Soy Dani, hoy es 07-07-2025, estoy probando nuevamente el actualizar este documento, el repositorio ha cambiado para subir diversos apuntes y darle un mejor uso. Sin embargo, dejaré este archivo .txt como recuerdo de mis primeros commits :)
