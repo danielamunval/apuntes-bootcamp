@@ -75,19 +75,23 @@ Este mini resumen explica qué hacen HTML, CSS y JavaScript:
 - **HTML** estructura la información: lo que ves como títulos, párrafos o formularios.
 Ejemplo:
 
-```html
+```
+html
   <h1>Bienvenida a mi sitio web</h1>
   <p>Este es un párrafo explicando de qué trata la página.</p>
+```
 
 - **CSS** decora esa información: cambia colores, fuentes, márgenes y distribuciones.
 Ejemplo:
 
+```
 <style>
   h1 {
     color: purple;
     font-family: Arial, sans-serif;
   }
 </style>
+```
 
 
 - **JavaScript** permite que todo sea interactivo: botones que reaccionan, formularios que validan datos, etc.
