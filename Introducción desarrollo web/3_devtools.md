@@ -1,4 +1,4 @@
-# 🧪 Tema: Explorando las herramientas de desarrollo
+# Tema: Explorando las herramientas de desarrollo
 
 **🎯 Objetivo:** Familiarizarse con las DevTools del navegador.
 
@@ -27,6 +27,21 @@ Muestra todas las solicitudes que hace la página: archivos HTML, CSS, JS, imág
 Muestra el contenido del almacenamiento local del navegador: cookies, localStorage, sessionStorage e indexedDB.
 
 ---
+
+### 3. Práctica con una web (por ejemplo: `https://www.google.com`)
+
+#### ✅ Captura los siguientes elementos:
+
+- **Una solicitud HTTP**:
+![Solicitud HTTP](C:\Users\danie\Desktop\BOOTCAMP FULL STACK JAVA\APUNTES PARA GITHUB\Introducción desarrollo web\img-act3\Solicitud-http.PNG)
+
+
+- **Un error en consola** (si aparece):
+![Error consola](C:\Users\danie\Desktop\BOOTCAMP FULL STACK JAVA\APUNTES PARA GITHUB\Introducción desarrollo web\img-act3\error-consola.PNG)
+
+
+- **El HTML de un elemento**:
+![HTML de un Elemento](C:\Users\danie\Desktop\BOOTCAMP FULL STACK JAVA\APUNTES PARA GITHUB\Introducción desarrollo web\img-act3\HTML-elemento.PNG)
 
 
 
