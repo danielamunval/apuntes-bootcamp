@@ -1,0 +1,30 @@
+/* <!-- Grid con areas nombras 
+Al profe no le gusta usarla mucho, comenta que es mucho código
+¿cuál elegir? depende del programador --> */
+
+.grid-areas-container {
+    display: grid;
+    grid-template-areas: 
+        "goku bardock jiren"
+        "goku bardock jiren";
+    gap: 10px;
+    background-color: aliceblue;
+    padding: 20px;
+    margin-bottom: 20px;
+}
+
+.grid-areas-container img:nth-child(1){
+    grid-area: goku;
+}
+
+.grid-areas-container img:nth-child(2){
+    grid-area: bardock;
+}
+
+.grid-areas-container img:nth-child(3){
+    grid-area: jiren;
+}
+
+.grid-areas-container img{
+    width: 120px;
+}

@@ -1,0 +1,13 @@
+/* Flex wrap */
+
+.flex-wrap-container{
+    display: flex;
+    flex-wrap: wrap;
+    background-color: aliceblue;
+    padding: 20px;
+    margin-bottom: 20px;
+}
+
+.flex-wrap-container {
+    width: 130px;
+}

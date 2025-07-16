@@ -1,0 +1,15 @@
+/* Float para alinear imagenes */
+
+.float-container{
+    background-color: aliceblue;
+    padding: 20px;
+    margin-bottom: 20px;
+    overflow: auto;
+}
+
+.float-container img {
+    float: left;
+    margin-right: 10px;
+    width: 130px;
+}
+

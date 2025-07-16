@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Página semántica">
+    <meta name="keywords" content="HTML, Semántica, Estructura">
+    <meta name="autor" content="Daniela Munoz">
+
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+
+</head>
+<body>
+    <!-- Este es el cuerpo de la página -->
+     <header>
+        <h1>Raíces Digitales C20</h1>
+        <nav>
+            <ul>
+                <li><a href="#inicio">Inicio</a></li>
+                <li><a href="#equipo">Nuestro Equipo</a></li>
+                <li><a href="#contacto">Contacto</a></li>
+            </ul>
+        </nav>
+
+     </header>
+
+<main>
+    <section id="inicio">
+        <h2>Bienvenido</h2>
+        <p>Este es un ejemplo</p>
+    </section>
+
+    <section id="equipo">
+        <h2>Nuestro Equipo</h2>
+        <!-- Esto es una tabla -->
+         <table>
+            <thead>
+                <tr>
+                    <th>Nombre</th>
+                    <th>Edad</th>
+                    <th>Hobbie</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Alumno1</td>
+                    <td>25</td>
+                    <td>Música</td>
+                </tr>
+                <tr>
+                    <td>Alumno2</td>
+                    <td>27</td>
+                    <td>Juegos</td>
+                </tr>
+                <tr>
+                    <td>Alumno1</td>
+                    <td>22</td>
+                    <td>Deportes</td>
+                </tr>
+            </tbody>
+         </table>
+    </section>
+
+    <section id="contacto">
+        <h2>Contacto</h2>
+        <!-- Esto es un formulario -->
+         <form>
+            <label for="nombre">Nombre:</label>
+            <input type="text" id="nombre" name="nombre" required>
+            <br>
+            <label for="password">Password:</label>
+            <input type="password" name="password" id="password" required>
+            <br>
+            <button type="submit">Enviar</button>
+            <button type="button">Enviar</button>
+         </form>      
+        </section>
+</main>
+
+<footer>
+    <p>&copy; 2025 Raíces Digitales - Todos los derechos reservados e izquierdos reservados.</p>
+</footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

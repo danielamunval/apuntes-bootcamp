@@ -1,0 +1,13 @@
+/* Flex en comlumna */
+
+.flex-column-container{
+    display: flex;
+    flex-direction: column;
+    background-color: aliceblue;
+    padding: 20px;
+    margin-bottom: 20px;
+}
+ 
+.flex-column-container img{
+    width: 120px;
+}

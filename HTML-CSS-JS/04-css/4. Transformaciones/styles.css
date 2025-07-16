@@ -1,0 +1,21 @@
+/* Transformaciones */
+ 
+.transform-container{
+    display: flex;
+    justify-content: space-around;
+    background-color: blueviolet;
+    padding: 20px;
+    margin-bottom: 20px;
+}
+ 
+.transform-container img{
+    transform: transform 0.3 ease;
+}
+ 
+.transform-container img:hover{
+    transform: scale(1.2) rotate(15deg);
+}
+ 
+.transform-container img{
+   width: 110px;
+}

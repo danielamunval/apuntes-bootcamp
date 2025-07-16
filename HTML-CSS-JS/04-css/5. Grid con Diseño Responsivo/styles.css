@@ -1,0 +1,17 @@
+/* <!-- Grid responsive
+hace referencia a responsivo; 
+es decir que la página sea capaz de adaptarse según el tamaño de la pantalla en la que se está mirando la pág --> */
+
+.grid-responsive-container{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, miniax (150px, 1fr));
+    gap: 10px;
+    background-color: blue;
+    padding: 20px;
+    margin-bottom: 20px;
+}
+ 
+.grid-responsive-container img{
+    width: 150px;
+    height: auto;
+}
