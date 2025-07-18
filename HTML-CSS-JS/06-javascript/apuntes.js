@@ -176,10 +176,132 @@ console.log("INICIANDO JAVASCRIPT")
     const tecnoMayus = tecnologias.map(tech => tech.toLocaleUpperCase()); // traspasa toda las variables a mayúsculas.
     console.log("Tecnologías en mayúsculas: ", tecnoMayus);
 
-    // 
+    /*
+    ¿Qué hace este código?
+    Convierte todos los elementos del array tecnologias a mayúsculas, y los guarda en una nueva variable llamada tecnoMayus.
+    
+    A. tecnologias
+    - Es un array (lista) que contiene nombres de tecnologías. Ejemplo:
+    - const tecnologias = ["html", "css", "javascript"];
+    
+    B. .map()
+    - Es un método de los arrays que sirve para recorrer cada elemento y devolver un nuevo array con los resultados. No modifica el original.
+    
+    C. tech => tech.toLocaleUpperCase()
+    - Esta es una función flecha (te explico abajo qué es). En este caso, por cada tech (elemento del array), se aplica el método:
+    - toLocaleUpperCase(): convierte el texto a mayúsculas, teniendo en cuenta configuraciones locales (como acentos o ñ).
+    
+    Ejemplo: "html".toLocaleUpperCase(); // "HTML"
+ 
+    Resultado en Resumen:
+    Si tienes una lista en minusculas
+    const tecnologias = ["html", "css", "javascript"];
+    
+    El resultado será:
+    ["HTML", "CSS", "JAVASCRIPT"]
 
+    */
+ 
+    /// IMPORTANTE
+    // ¿Qué significa const?
+    // const define una variable constante, lo que no significa que su contenido no pueda cambiar, sino que no puedes reasignarla (no puedes darle otro valor por completo).
+    
+    // let — variable mutable (puede cambiar)
+    // let nombre = "Ana";
+    // nombre = "Carlos"; //Esto es válido
+    // const — variable no reasignable
+    // const edad = 30;
+    // edad = 35; // Error: no puedes reasignar
+    
+    // Pero ojo: con arrays y objetos...
+    // Aunque uses const, puedes modificar el contenido interno de arrays y objetos:
+    //
+    // const tecnologias = ["html", "css"];
+    // tecnologias.push("js"); // Esto sí se puede
+    // console.log(tecnologias); // ["html", "css", "js"]
+    // Lo que no puedes hacer es esto:
+    //
+    // tecnologias = ["react", "vue"]; // Error
+    
+    // Entonces, ¿es correcto llamarla "variable"?
+    // Sí, es correcto.
+    // 🔹 Técnicamente, const, let y var declaran variables.
+    // 🔹 El término "constante" se refiere a la restricción de reasignación, no a su naturaleza como variable.
+
+    const tecnologias1 = ["HTML", "CSS", "REACT", "NODE", "JavaScript"];
+    // REDUCE -> "reducir todo el array a un solo valor"
+    const totalLetras = tecnologias1.reduce((total, tech) => total + tech.length, 0);
+    console.log("Total de Letras: ", totalLetras)
+
+    /* REDUCE suma la longitud de cada tecnología:
+        - total: el acumulador (empieza en 0)
+        - tech: cada elemento del array
+        - total + tech.length: se convierte en la nueva suma */
+
+
+    //FIND - encuentra el primer elemento que cumple una condición
+    const tecnologias2 = ["HTML", "CSS", "REACT", "NODE", "JavaScript"];
+    const react = tecnologias2.find(tech => tech === "");
+    console.log("Encontrado: ", react);
+
+    // OJO! JAMÁS HACER ESTO - NUNCA, es una mala práctica
+    x = 10; //está mal planteada la variable, no hay uso de let o const
+    console.log(x); //si bien imprimirá el valor, no está bien planteado
+
+    //OJO!!
+    const resultado = "10" - 5;
+    console.log(resultado) //en este caso, si bien hay un String y un entero; se consideran ambas como entero y se ejecuta la suma, y se imprime 5.
+
+    const resultado2 = "10" - 5 + 2 + "4" - "8";
+    console.log(resultado2) //en este caso los string al lado de un + se concatenan y no se agregan, los string al lado de - son forzados a ser números. En este caso: 10 - 5 = 5 + 2 = 7 + "4" = 74 - "8" = 66 (lo cual no tiene sentido matemáticamente hablando, no hay lógica, se mezclan ambos tipos de variables).
 
     
+    // **** OBJETOS ****
+    const estudiante = {
+        nombre: "Alumno1",
+        edad: 23,
+        tecnologias: ["JavaScript", "React", "Node"],
+        activo: true,
+
+        //Método dentro del objeto o función
+        saludar: function(){
+            return `Hola, soy ${this.nombre} y tengo ${this.edad} años`;
+        }
+    } 
+    console.log(estudiante.saludar()); //esta es la forma de llamar una función dentro de un objeto. NO OLVIDAR LOS PARÉNTESIS. Para hacer válida la función se debe llamar si o si al objeto primero!!
+    console.log("Nombre: ", estudiante.nombre); // en este caso, solo se llamaría la variable nombre.
+    console.log("Edad: ", estudiante.edad); //esto es una notación punto.
+    console.log("Edad: ", estudiante["edad"]); // esto se conoce como notación corchete.
+
+    //ambas notaciones - punto y corchete - son válidas.
+
+    // *** SCOPE *** información que se encuentra entre llaves.
+    let x = 10 ;
+    console.log(x);
+    
+    if (true) {
+        let x = 20;
+        console.log(x);
+    }
+    //en el caso de arriba, se imprimen ambos valores asignados para variable X ya que se consideran variables independientes y ambas válidas ya que una de ellas se encuentra dentro del scope. Se imprimen ambos valores: 10 y 20.
+
+    let variableGlobal = "Soy Global";
+
+    function ejemplo(){
+        let variableLocal = "Soy Local";
+
+        if (true) {
+            let variableBloque = "Soy Bloque";
+            console.log("Desde Bloque: ", variableGlobal);
+            console.log("Desde Bloque: ", variableLocal);
+            console.log("Desde Bloque: ", variableBloque);
+        }
+        console.log("Desde función: ", variableLocal);
+    }
+    ejemplo();
+    // en este caso, la función se encuentra fuera, o no hay un objeto que deba llamarse previamente, por lo tanto se puede llamar la función sola sin problemas.
+
+       
     console.log()
 
 
