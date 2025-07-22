@@ -12,274 +12,388 @@ SOLID es un acrónimo que representa:
 - **I** - Interface Segregation Principle (Principio de Segregación de Interfaces)
 - **D** - Dependency Inversion Principle (Principio de Inversión de Dependencias)
 
-## 1. Single Responsibility Principle (SRP)
+## 1. 🟡 "S" = Single Responsibility Principle (SRP)
 
-**Definición:** Una clase debe tener una sola razón para cambiar, es decir, debe tener una única responsabilidad.
+> _Una clase debe tener una única razón para cambiar._
 
-### Ejemplo Incorrecto:
-```python
-class Usuario:
-    def __init__(self, nombre, email):
-        self.nombre = nombre
-        self.email = email
-    
-    def guardar_en_db(self):
-        # Lógica para guardar en base de datos
-        pass
-    
-    def enviar_email(self):
-        # Lógica para enviar email
-        pass
-    
-    def validar_email(self):
-        # Lógica para validar email
-        pass
+Esto significa que una clase debe encargarse de **una sola funcionalidad** o tarea del sistema.
+
+### ✅ Ejemplo en Java:
+
+```java
+// ❌ Mala práctica: una clase que gestiona empleados y también guarda en archivos
+public class Employee {
+    public void calculatePay() { /* ... */ }
+    public void saveToFile() { /* ... */ } // responsabilidad extra
+}
+
+// ✅ Buena práctica: separar responsabilidades
+public class Employee {
+    public void calculatePay() { /* ... */ }
+}
+
+public class EmployeeFileSaver {
+    public void saveToFile(Employee emp) { /* ... */ }
+}
 ```
 
-### Ejemplo Correcto:
-```python
-class Usuario:
-    def __init__(self, nombre, email):
-        self.nombre = nombre
-        self.email = email
+### ✅ Ejemplo en JavaScript:
 
-class RepositorioUsuario:
-    def guardar(self, usuario):
-        # Lógica para guardar en base de datos
-        pass
+```javascript
 
-class ServicioEmail:
-    def enviar(self, email, mensaje):
-        # Lógica para enviar email
-        pass
+// ❌ Una clase hace demasiado: gestiona datos y renderiza
+class User {
+  constructor(name) {
+    this.name = name;
+  }
 
-class ValidadorEmail:
-    def validar(self, email):
-        # Lógica para validar email
-        pass
+  saveUser() {
+    // lógica para guardar en DB
+  }
+
+  renderUserCard() {
+    // lógica para mostrarlo en el DOM
+  }
+}
+
+// ✅ Separar responsabilidades
+class User {
+  constructor(name) {
+    this.name = name;
+  }
+}
+
+class UserService {
+  saveUser(user) {
+    // lógica para guardar en DB
+  }
+}
+
+class UserRenderer {
+  renderUserCard(user) {
+    // lógica para mostrarlo en el DOM
+  }
+}
 ```
 
-## 2. Open/Closed Principle (OCP)
+---
 
-**Definición:** Las entidades de software deben estar abiertas para extensión pero cerradas para modificación.
+## 2. 🟢 "O" = Open/Closed Principle (OCP)
 
-### Ejemplo Incorrecto:
-```python
-class CalculadorDescuento:
-    def calcular(self, tipo_cliente, precio):
-        if tipo_cliente == "regular":
-            return precio
-        elif tipo_cliente == "premium":
-            return precio * 0.9
-        elif tipo_cliente == "vip":
-            return precio * 0.8
+> _Las clases deben estar abiertas para la extensión, pero cerradas para la modificación._
+
+Puedes **agregar nuevas funcionalidades** sin modificar el código existente.
+
+### ✅ Ejemplo en Java:
+```java
+// Clase base
+public abstract class Shape {
+    public abstract double area();
+}
+
+// Nuevas formas pueden extender esta clase sin modificarla
+public class Circle extends Shape {
+    private double radius;
+
+    public Circle(double radius) {
+        this.radius = radius;
+    }
+
+    public double area() {
+        return Math.PI * radius * radius;
+    }
+}
+
+public class Square extends Shape {
+    private double side;
+
+    public Square(double side) {
+        this.side = side;
+    }
+
+    public double area() {
+        return side * side;
+    }
+}
 ```
 
-### Ejemplo Correcto:
-```python
-from abc import ABC, abstractmethod
+### ✅ Ejemplo en JavaScript:
 
-class EstrategiaDescuento(ABC):
-    @abstractmethod
-    def calcular(self, precio):
-        pass
+```javascript
+// ❌ Agregar nuevos tipos obliga a modificar la función
+function getArea(shape) {
+  if (shape.type === 'square') {
+    return shape.size * shape.size;
+  } else if (shape.type === 'circle') {
+    return Math.PI * shape.radius ** 2;
+  }
+}
 
-class DescuentoRegular(EstrategiaDescuento):
-    def calcular(self, precio):
-        return precio
+// ✅ Usamos clases y polimorfismo
+class Shape {
+  getArea() {
+    throw new Error('Debe implementarse en la subclase');
+  }
+}
 
-class DescuentoPremium(EstrategiaDescuento):
-    def calcular(self, precio):
-        return precio * 0.9
+class Square extends Shape {
+  constructor(size) {
+    super();
+    this.size = size;
+  }
+  getArea() {
+    return this.size * this.size;
+  }
+}
 
-class DescuentoVIP(EstrategiaDescuento):
-    def calcular(self, precio):
-        return precio * 0.8
-
-class CalculadorDescuento:
-    def __init__(self, estrategia):
-        self.estrategia = estrategia
-    
-    def calcular(self, precio):
-        return self.estrategia.calcular(precio)
+class Circle extends Shape {
+  constructor(radius) {
+    super();
+    this.radius = radius;
+  }
+  getArea() {
+    return Math.PI * this.radius ** 2;
+  }
+}
 ```
 
-## 3. Liskov Substitution Principle (LSP)
+---
 
-**Definición:** Los objetos de una clase derivada deben poder reemplazar objetos de la clase base sin alterar el correcto funcionamiento del programa.
 
-### Ejemplo Incorrecto:
-```python
-class Ave:
-    def volar(self):
-        return "Volando"
 
-class Pinguino(Ave):
-    def volar(self):
-        raise Exception("Los pingüinos no pueden volar")
+
+
+
+## 3. 🔵 "L" = Liskov Substitution Principle (LSP)
+
+**Definición:** Los objetos de una clase derivada (subclase) deben poder reemplazar objetos de la clase base sin alterar el correcto funcionamiento del programa.
+
+### ✅ Ejemplo en Java:
+
+```java
+class Bird {
+    public void fly() {
+        System.out.println("This bird flies.");
+    }
+}
+
+class Eagle extends Bird { } // ✅ ok
+
+class Ostrich extends Bird {
+    @Override
+    public void fly() {
+        throw new UnsupportedOperationException("Ostriches can't fly"); // ❌ rompe LSP
+    }
+}
 ```
 
-### Ejemplo Correcto:
-```python
-from abc import ABC, abstractmethod
+**Solución:** Separar las clases en jerarquías coherentes.
 
-class Ave(ABC):
-    @abstractmethod
-    def moverse(self):
-        pass
+```java
+class Bird { }
 
-class AveVoladora(Ave):
-    def moverse(self):
-        return "Volando"
-    
-    def volar(self):
-        return "Volando"
+class FlyingBird extends Bird {
+    public void fly() { }
+}
 
-class AveNadadora(Ave):
-    def moverse(self):
-        return "Nadando"
-    
-    def nadar(self):
-        return "Nadando"
+class Eagle extends FlyingBird { }
 
-class Aguila(AveVoladora):
-    pass
-
-class Pinguino(AveNadadora):
-    pass
+class Ostrich extends Bird { } // ✅ ahora no se espera que vuele
 ```
 
-## 4. Interface Segregation Principle (ISP)
+### ✅ Ejemplo en JavaScript:
 
-**Definición:** Los clientes no deben ser forzados a depender de interfaces que no utilizan.
+```javascript
+class Bird {
+  fly() {
+    console.log("Estoy volando!");
+  }
+}
 
-### Ejemplo Incorrecto:
-```python
-from abc import ABC, abstractmethod
+// ❌ Este pato rompe el principio porque no vuela
+class Duck extends Bird {}
+class Penguin extends Bird {
+  fly() {
+    throw new Error("¡Los pingüinos no vuelan!"); // ❌
+  }
+}
 
-class Trabajador(ABC):
-    @abstractmethod
-    def trabajar(self):
-        pass
-    
-    @abstractmethod
-    def comer(self):
-        pass
-    
-    @abstractmethod
-    def dormir(self):
-        pass
+// ✅ Solución: separar comportamientos
+class Bird {}
+class FlyingBird extends Bird {
+  fly() {
+    console.log("Estoy volando!");
+  }
+}
 
-class TrabajadorHumano(Trabajador):
-    def trabajar(self):
-        return "Trabajando"
-    
-    def comer(self):
-        return "Comiendo"
-    
-    def dormir(self):
-        return "Durmiendo"
-
-class Robot(Trabajador):
-    def trabajar(self):
-        return "Trabajando"
-    
-    def comer(self):
-        # Los robots no comen
-        raise NotImplementedError
-    
-    def dormir(self):
-        # Los robots no duermen
-        raise NotImplementedError
+class Duck extends FlyingBird {}
+class Penguin extends Bird {}
 ```
 
-### Ejemplo Correcto:
-```python
-from abc import ABC, abstractmethod
+---
 
-class Trabajable(ABC):
-    @abstractmethod
-    def trabajar(self):
-        pass
+## 4. 🟠 "I" = Interface Segregation Principle (ISP)
 
-class Comible(ABC):
-    @abstractmethod
-    def comer(self):
-        pass
+**Definición:** > _Ninguna clase debe ser forzada a depender de métodos que no usa._
 
-class Durmiente(ABC):
-    @abstractmethod
-    def dormir(self):
-        pass
+### ✅ Ejemplo en Java:
 
-class TrabajadorHumano(Trabajable, Comible, Durmiente):
-    def trabajar(self):
-        return "Trabajando"
-    
-    def comer(self):
-        return "Comiendo"
-    
-    def dormir(self):
-        return "Durmiendo"
+```java
+// ❌ Interface con métodos innecesarios
+interface Worker {
+    void work();
+    void eat();
+}
 
-class Robot(Trabajable):
-    def trabajar(self):
-        return "Trabajando"
+// ✅ Separar responsabilidades
+interface Workable {
+    void work();
+}
+
+interface Eatable {
+    void eat();
+}
+
+class Robot implements Workable {
+    public void work() {
+        System.out.println("Robot working");
+    }
+}
 ```
 
-## 5. Dependency Inversion Principle (DIP)
+### ✅ Ejemplo en JavaScript:
+
+```javascript
+// ❌ Forzar a una clase a tener métodos que no usa
+class Worker {
+  work() {}
+  eat() {}
+}
+
+class Robot extends Worker {
+  eat() {
+    throw new Error("¡Los robots no comen!"); // ❌
+  }
+}
+
+// ✅ Separar interfaces conceptualmente
+class Workable {
+  work() {}
+}
+
+class Eatable {
+  eat() {}
+}
+
+class Human extends Workable {
+  work() {}
+  eat() {}
+}
+
+class Robot extends Workable {
+  work() {}
+}
+
+```
+
+---
+
+## 5. 🔴 "D" = Dependency Inversion Principle (DIP)
 
 **Definición:** Los módulos de alto nivel no deben depender de módulos de bajo nivel. Ambos deben depender de abstracciones.
 
-### Ejemplo Incorrecto:
-```python
-class BaseDatosMySQL:
-    def guardar(self, datos):
-        # Lógica específica de MySQL
-        pass
+### ✅ Ejemplo en Java:
 
-class ServicioUsuario:
-    def __init__(self):
-        self.bd = BaseDatosMySQL()  # Dependencia directa
-    
-    def crear_usuario(self, datos):
-        # Lógica de negocio
-        self.bd.guardar(datos)
+```java
+// ❌ Clase de alto nivel depende de una implementación concreta
+class LightBulb {
+    public void turnOn() { System.out.println("On"); }
+    public void turnOff() { System.out.println("Off"); }
+}
+
+class Switch {
+    private LightBulb bulb;
+
+    public Switch(LightBulb bulb) {
+        this.bulb = bulb;
+    }
+
+    public void operate() {
+        bulb.turnOn();
+    }
+}
 ```
 
-### Ejemplo Correcto:
-```python
-from abc import ABC, abstractmethod
+**Solución usando una interfaz:**
 
-class RepositorioDatos(ABC):
-    @abstractmethod
-    def guardar(self, datos):
-        pass
+```java
+interface Switchable {
+    void turnOn();
+    void turnOff();
+}
 
-class BaseDatosMySQL(RepositorioDatos):
-    def guardar(self, datos):
-        # Lógica específica de MySQL
-        pass
+class LightBulb implements Switchable {
+    public void turnOn() { System.out.println("On"); }
+    public void turnOff() { System.out.println("Off"); }
+}
 
-class BaseDatosPostgreSQL(RepositorioDatos):
-    def guardar(self, datos):
-        # Lógica específica de PostgreSQL
-        pass
+class Switch {
+    private Switchable device;
 
-class ServicioUsuario:
-    def __init__(self, repositorio: RepositorioDatos):
-        self.repositorio = repositorio  # Dependencia de abstracción
-    
-    def crear_usuario(self, datos):
-        # Lógica de negocio
-        self.repositorio.guardar(datos)
+    public Switch(Switchable device) {
+        this.device = device;
+    }
 
-# Uso
-repositorio = BaseDatosMySQL()
-servicio = ServicioUsuario(repositorio)
+    public void operate() {
+        device.turnOn();
+    }
+}
 ```
 
-## Beneficios de los Principios SOLID
+✅ Ejemplo en JavaScript:
+
+```javascript
+// ❌ Switch depende directamente de LightBulb
+class LightBulb {
+  turnOn() { console.log("On"); }
+  turnOff() { console.log("Off"); }
+}
+
+class Switch {
+  constructor(bulb) {
+    this.bulb = bulb;
+  }
+
+  operate() {
+    this.bulb.turnOn();
+  }
+}
+
+// ✅ Usar una "abstracción" mediante interface conceptual
+class Switch {
+  constructor(device) {
+    this.device = device;
+  }
+
+  operate() {
+    this.device.turnOn();
+  }
+}
+
+class Fan {
+  turnOn() { console.log("Fan On"); }
+  turnOff() { console.log("Fan Off"); }
+}
+
+const myFan = new Fan();
+const mySwitch = new Switch(myFan);
+mySwitch.operate();
+
+```
+
+---
+
+## Beneficios de los Principios SOLID 💡
 
 ### Mantenibilidad
 El código es más fácil de mantener y modificar sin afectar otras partes del sistema.
@@ -296,6 +410,6 @@ Los componentes pueden ser reutilizados en diferentes contextos sin modificacion
 ### Legibilidad
 El código es más claro y fácil de entender para otros desarrolladores.
 
-## Conclusión
+## Conclusión 🌟
 
 Los principios SOLID son fundamentales para crear software de calidad. Aunque pueden parecer complejos al principio, su aplicación consistente resulta en código más robusto, mantenible y escalable. Es importante recordar que estos principios son guías, no reglas absolutas, y deben aplicarse con criterio según el contexto específico del proyecto.
