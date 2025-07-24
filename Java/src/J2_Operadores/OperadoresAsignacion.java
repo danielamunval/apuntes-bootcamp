@@ -1,8 +1,8 @@
-package C20_120625;
+package J2_Operadores;
 
 import java.util.Scanner;
 
-public class OperadoresAsignación {
+public class OperadoresAsignacion {
     //Main va a ser el punto de entrada a este programa.
     public static void main(String[] args) { // Acá se define un scope local o de función. No olvidar que un scope es lo que se encuentra contenido entre llaves {}.
 
@@ -53,15 +53,6 @@ public class OperadoresAsignación {
         //acá se le restará un número menor después de imprimir el número, se mostrará 6, pero realmente es 5 (ejemplo)
         System.out.println("Ahora el segundo número equivale a: " + numeroDos--);
         //si no se quiere volver a llamar a las variables, se les agrega nuevamente -- o ++ al final.
-
-
-
-
-
-
-
-
-
 
     }
 }

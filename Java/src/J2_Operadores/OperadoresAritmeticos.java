@@ -1,4 +1,4 @@
-package C20_110625;
+package J2_Operadores;
 
 public class OperadoresAritmeticos {
 
