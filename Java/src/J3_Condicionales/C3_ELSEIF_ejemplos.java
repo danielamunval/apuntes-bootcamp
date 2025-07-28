@@ -1,6 +1,6 @@
-package C20_160625;
+package J3_Condicionales;
 
-public class ELSEIF_ejemplo {
+public class C3_ELSEIF_ejemplos {
     public static void main(String[] args) {
         int temperatura = 20;
 
@@ -12,8 +12,8 @@ public class ELSEIF_ejemplo {
             }
 
 
-        /**Ejemplo 2**/
-        //También podría ser muchos if, pero no está bien visto hacer eso; en realidad un ejemplo así debería ser con switch, pero lo dará en otro ejemplo.
+        /** Ejemplo 2 **/
+        //También podrían ser muchos if, pero no está bien visto hacer eso; en realidad un ejemplo así debería ser con switch, pero se explicará en otro ejemplo.
         int calificacion = 65;
 
         if (calificacion >= 70){
@@ -29,7 +29,7 @@ public class ELSEIF_ejemplo {
             System.out.println("Reprobado");
         }
 
-        /**Ejemplo 3**/
+        /** Ejemplo 3 **/
 
         String user = "admin";
         String password = "<PASSWORD>";
@@ -45,7 +45,7 @@ public class ELSEIF_ejemplo {
         //En este caso, dará error "ingrese correctamente" porque no coincide 123 con "<Password>"
 
 
-        /**Ejemplo 3.2**/
+        /** Ejemplo 3.2 **/
 
         String user1 = "admin";
         String password1 = "<PASSWORD>";

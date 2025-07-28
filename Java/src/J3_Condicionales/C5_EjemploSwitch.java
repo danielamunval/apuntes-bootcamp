@@ -1,8 +1,6 @@
-package C20_160625;
+package J3_Condicionales;
 
-import java.lang.classfile.instruction.SwitchCase;
-
-public class EjemploSwitch {
+public class C5_EjemploSwitch {
     public static void main(String[] args) {
         int dia = 3;
         String nombreDia;

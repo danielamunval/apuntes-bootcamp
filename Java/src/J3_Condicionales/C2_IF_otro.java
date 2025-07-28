@@ -1,6 +1,6 @@
-package C20_160625;
+package J3_Condicionales;
 
-public class IFF {
+public class C2_IF_otro {
     public static void main(String[] args) {
         boolean esVerdadero = true;
 
