@@ -2,7 +2,7 @@ package J4_Bucles;
 
 import java.util.Scanner;
 
-public class While_ejemplos {
+public class B2_WhileEjemplos {
     public static void main(String[] args) {
         System.out.println("Validación de entrada");
         Scanner teclado = new Scanner(System.in);
@@ -37,7 +37,7 @@ public class While_ejemplos {
 
         System.out.println("---------------------------------------------------" + "\n");
 
-        /** Ejemplo 2 **/ //REVISAR ESTE EJEMPLO, ACÁ TB ME PERDI
+        /** Ejemplo 2 **/
 
         int intento = 0;
         boolean adivinar = false;

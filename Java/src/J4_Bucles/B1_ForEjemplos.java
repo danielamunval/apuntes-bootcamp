@@ -1,12 +1,12 @@
 package J4_Bucles;
 
-public class BUCLES_for {
+public class B1_ForEjemplos {
     public static void main(String[] args) {
 
         System.out.println("Contador básico");
         System.out.println("Contando del 1 al 10");
 
-        for (int i = 1; i <= 10; i ++) { //
+        for (int i = 1; i <= 10; i ++) { // se agrega -> (variable; condicion; actualización)
             System.out.println(i + " "); // si pongo println cuenta como salto de linea , si está solo print ejecutará hacia el lado
         }
 
