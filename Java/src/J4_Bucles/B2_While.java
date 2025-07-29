@@ -37,5 +37,4 @@ public class B2_While {
             }
         }
     }
-
 }

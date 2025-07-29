@@ -1,4 +1,4 @@
-package C20_180625;
+package J5_Funciones;
 
 public class MetodoConStatic {
     // Pertenecen a la clase, no al objeto.

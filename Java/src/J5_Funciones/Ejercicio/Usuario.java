@@ -1,4 +1,4 @@
-package C20_180625.Ejercicio;
+package J5_Funciones.Ejercicio;
 
 public class Usuario {
     private String nombre;

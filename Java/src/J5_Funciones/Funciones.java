@@ -1,4 +1,4 @@
-package C20_180625;
+package J5_Funciones;
 
 public class Funciones {
     public static int sumar(int num1, int num2) { //Definición de la función "sumar" con dos argumentos.

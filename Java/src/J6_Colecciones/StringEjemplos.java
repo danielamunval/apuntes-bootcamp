@@ -1,4 +1,4 @@
-package C20_190625;
+package J6_Colecciones;
 
 public class StringEjemplos {
     public static void main(String[] args) {
