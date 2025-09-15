@@ -1,4 +1,4 @@
-package J5_Funciones.Ejercicio;
+package J5_Funciones.Ejemplo;
 
 public class Usuario {
     private String nombre;

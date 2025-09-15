@@ -1,4 +1,4 @@
-package J5_Funciones.Ejercicio;
+package J5_Funciones.Ejemplo;
 
 public class Main {
     public static void main(String[] args) {

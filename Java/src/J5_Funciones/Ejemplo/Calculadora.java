@@ -1,4 +1,4 @@
-package J5_Funciones.Ejercicio;
+package J5_Funciones.Ejemplo;
 
 public class Calculadora {
     public static int sumar(int a, int b) {
