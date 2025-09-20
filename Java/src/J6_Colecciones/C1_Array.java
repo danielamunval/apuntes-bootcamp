@@ -1,8 +1,9 @@
 package J6_Colecciones;
 
-public class Array {
+public class C1_Array {
     public static void main(String[] args) {
         // Array == arreglos.
+        // Los arreglos son estructuras de datos que almacenan elementos de forma conjunta en la memoria.
         // Declaración array es fija.
         // Un array tiene que usar corchetes.
         // Sintaxis: tipo [] nombre;
@@ -19,7 +20,7 @@ public class Array {
         numeros[4] = 50;
 
         // Ver la longitud del array
-        System.out.println(numeros[0]); // acá va a imprimir el calor de la varible numero en la posición [0], que en este caso sería 10.
+        System.out.println(numeros[0]); // acá va a imprimir el valor de la varible numero en la posición [0], que en este caso sería 10.
         System.out.println(numeros.length); // acá imprime la longitud del arreglo que es 5.
 
         System.out.println("\nEjemplo Arreglo con For");
@@ -30,11 +31,10 @@ public class Array {
 
         String[] frutas = {"Manzana", "Pera", "Uva"}; // Longitud 0 1 2 = 3
         System.out.println("\n** Frutas **");
-        // Básicamente, se va elemento por elemento
+        // Básicamente, se va leyendo elemento por elemento
         for (String fruta : frutas){  // Este for es especial, se llama "for each", lo que hace es imprimir elemento por elemento el arreglo que se declare arriba. Funciona como INDICE, pero es para mostrar el ELEMENTO.
             System.out.println(fruta + " "); //Este arreglo imprime todos los elementos del array, el array completo = en este caso, todas las frutas.
             // System.out.println(frutas); NO imprimir directamente el arreglo, ni siquiera dentro del for each, ya que imprimirá la ubicación; no lo que dice la variable.
         }
-
     }
 }

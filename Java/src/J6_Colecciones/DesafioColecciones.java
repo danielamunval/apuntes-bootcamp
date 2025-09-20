@@ -1,4 +1,4 @@
-package C20_230625;
+package J6_Colecciones;
 
 import java.util.ArrayList;
 import java.util.HashSet;
@@ -7,7 +7,8 @@ import java.util.HashMap;
 public class DesafioColecciones {
     public static void main(String[] args) {
 
-        System.out.println("**Condiciones Iniciales**\n");
+        System.out.println("*** EJERCICIO: DESAFIO COLECCIONES ***");
+        System.out.println("** Condiciones Iniciales **\n");
 
         // 1. ArrayList para almacenar nombres de personajes
         ArrayList<String> personajes = new ArrayList<>();

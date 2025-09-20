@@ -1,9 +1,13 @@
-package C20_230625;
+package J6_Colecciones;
 
 import java.util.HashMap;
 import java.util.Map;
 
-public class EjemploMap {
+public class C4_Map {
+    /** MAPAS - MAP - HASHMAP **/
+    // Colección de pares clave - valor.
+    // Cada clave está asociada a un único valor.
+
     public static void main(String[] args) {
 
         //Declaración Map
@@ -27,7 +31,7 @@ public class EjemploMap {
             System.out.println(entry.getKey() + " " + entry.getValue());
         }
 
-        //Verificar si EXISTE
+        //Verifica si EXISTE
         //Devuelve un booleano, si lo encuentra true o false.
         System.out.println("¿Existe el lápiz?" + inventario.containsKey("Lapiz")); //si se ingresa uno que no está, simplemente dirá false.
 

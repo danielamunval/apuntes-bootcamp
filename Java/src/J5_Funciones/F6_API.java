@@ -12,11 +12,14 @@ public class F6_API {
     public static void main(String[] args) {
         String texto = "Hola Mundo";
 
-        System.out.println("Longitud: " + texto.length()); //longitud de la cadena
-        System.out.println("Primer carácter: " + texto.charAt(0)); //muestra el primer carácter, en ubicación 0
-        System.out.println("Subcadena (0 a 4): " + texto.substring(0, 4));
-        System.out.println("¿Contiene 'Mundo'? " + texto.indexOf("Mundo")); //busca el contenido.
-        System.out.println("Concatenado: " + texto.concat(" desde Java"));
+        System.out.println("Longitud: " + texto.length()); // longitud de la cadena
+        System.out.println("Primer carácter: " + texto.charAt(0)); // muestra el primer carácter, en ubicación 0
+        System.out.println("Último carácter: " + texto.charAt(texto.length() -1)); // Menciona el último carácter, la última letra.
+        System.out.println("Texto sin espacios: "+ texto.trim()); // elimina espacios al inicio y al final.
+        System.out.println("Subcadena (0 a 4): " + texto.substring(0, 4)); // busca el contenido entre el parámetro de ubicación indicado.
+        System.out.println("¿Contiene 'Mundo'? " + texto.indexOf("Mundo")); // busca el contenido dentro de la cadena, busca la ubicación donde comienza el contenido.
+        System.out.println("¿Contiene 'Mundo'?" + texto.contains("Mundo")); // busca el contenido en la cadena de texto.
+        System.out.println("Concatenado: " + texto.concat(" desde Java")); // concatena = une.
         System.out.println("¿Es igual a 'hola mundo'? " + texto.equals("hola mundo")); //comparación.
         System.out.println("Mayúsculas: " + texto.toUpperCase()); //lo convierte TODO a mayúsculas
         System.out.println("Minúsculas: " + texto.toLowerCase()); //lo convierte TODO a minúsculas

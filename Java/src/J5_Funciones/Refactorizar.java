@@ -1,4 +1,4 @@
-package J6_Colecciones;
+package J5_Funciones;
 
 public class Refactorizar {
     public static void main(String[] args) {

@@ -1,9 +1,15 @@
-package C20_230625;
+package J6_Colecciones;
 
 import java.util.List;
 import java.util.stream.Collectors;
 
-public class EjemploStream {
+public class C5_Stream {
+    // Stream -> filtran, mapean, reducen de forma sencilla y concisa.
+    // Es una secuencia de elementos que soporta diferentes tipos de operaciones para procesar datos.
+
+    // Operaciones intermedias -> transforman un stream en otro stream. No se ejecutan hasta que no se ejecute una operación terminal. Ejemplos: filter(), map(), sorted().
+    // Operaciones terminales -> producen un resultado o efecto secundario y terminan el stream. Ejemplos: collect(), forEach(), reduce().
+
     public static void main(String[] args) {
 
         //Declaración de Stream
@@ -19,9 +25,7 @@ public class EjemploStream {
         System.out.println("Nombres filtrados: ");
         resultado.forEach(System.out::println); //el forEach va simplificado, porque ya sabemos que recorrerá elemento por elemento.
 
-
     }
-
 
 }
 
