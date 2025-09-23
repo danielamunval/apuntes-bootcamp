@@ -1,4 +1,4 @@
-package C20_240625.ModelsEjercicio;
+package J7_POO.EjercicioPOO_P1.Models;
 
 public class Estudiante {
 
@@ -49,7 +49,6 @@ public class Estudiante {
         System.out.println("Año actual: " + anio);
 
     }
-
 
 }
 

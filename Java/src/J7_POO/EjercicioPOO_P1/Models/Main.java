@@ -1,4 +1,4 @@
-package C20_240625.ModelsEjercicio;
+package J7_POO.EjercicioPOO_P1.Models;
 
 public class Main {
     public static void main(String[] args) {
@@ -22,7 +22,6 @@ public class Main {
         estudiante1.avanzarDeAnio();
         estudiante2.avanzarDeAnio();
         estudiante3.avanzarDeAnio();
-
 
         // Crear instancias de Curso y probar métodos
         System.out.println("\n== Crear un curso ==\n");
@@ -49,7 +48,6 @@ public class Main {
         System.out.println("Total de estudiantes inscritos " + cursoJava.contarEstudiantes() + "\n");
 
         System.out.println("\n == FIN == ");
-
 
     }
 }

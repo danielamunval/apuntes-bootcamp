@@ -1,4 +1,4 @@
-package C20_240625.ModelsEjercicio;
+package J7_POO.EjercicioPOO_P1.Models;
 
 import java.util.ArrayList;
 
